@@ -1,4 +1,4 @@
-spaish.DetailsReopen = (pageKey, nodeSelectors) => {
+spaish.detailsReopen = (pageKey, nodeSelectors) => {
   
   const storeOpenSection = (sessionKey, nodeSelectors) => {
     window.addEventListener('beforeunload', () => {

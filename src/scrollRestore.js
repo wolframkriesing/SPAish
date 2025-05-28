@@ -2,7 +2,7 @@
  * Stores and restores scroll offsets. Initially just for the window.
  * If `otherNodeSelectors` are provided, they will be scrolled to their last position too.
  */
-spaish.ScrollRestore = (pageKey, otherNodeSelectors = []) => {
+spaish.scrollRestore = (pageKey, otherNodeSelectors = []) => {
 
   const safeQuerySelector = (selector) => {
     try {
