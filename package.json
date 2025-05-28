@@ -1,0 +1,29 @@
+{
+  "name": "@wolframkriesing/spaish",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "SPAish makes Multi-Page Applications (MPAs) feel a bit more like Single-Page Applications (SPAs) — without changing your architecture.",
+  "version": "1.0.0",
+  "main": "dist/spaish.js",
+  "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
+  "scripts": {
+    "test": "",
+    "build": "cat src/*.js > dist/spaish.js",
+    "deploy": "npm run build && git clone --branch=pages `git remote get-url origin` _deploy 2>/dev/null; cd _deploy && git pull && cp -r ../_dist/* . && git add --all . && git commit -m \"Deployed - `date`\";"
+  },
+  "keywords": [
+    "spa",
+    "mpa",
+    "scroll",
+    "details",
+    "javascript",
+    "browser"
+  ],
+  "author": "Wolfram Kriesing",
+  "license": "agpl-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/wolframkriesing/spaish.git"
+  }
+}
