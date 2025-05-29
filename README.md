@@ -22,7 +22,7 @@ Include via a script tag at the end of your page, or at least after the
 DOM nodes referred to have been rendered.
 
 ```html
-<script src="/path/to/spaish.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wolframkriesing/spaish/dist/spaish.min.js"></script>
 <script>
   // Restore scroll position, useful e.g. when filtering/sorting data, big forms, comments, threads, ...
   spaish.scrollRestore(location.pathname, ['#scrollable-node']);
