@@ -10,7 +10,7 @@ Find here all changes tracked while developing SPAish.
 - [ ] auto-open details when current page linked inside, not sure if this makes always sense
 - [...] create `id` on H1-H6 elements, so they can be linked to and create # links to them
 
-## v1.0.1
+## v1.0.2
 
 - [x] theme (re)store
 

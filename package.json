@@ -4,7 +4,7 @@
     "access": "public"
   },
   "description": "SPAish makes Multi-Page Applications (MPAs) feel a bit more like Single-Page Applications (SPAs) — without changing your architecture.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/spaish.js",
   "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
   "scripts": {
