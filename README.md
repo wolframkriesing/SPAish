@@ -1,5 +1,12 @@
 # SPAish
 
+SPAish - progressive enhancer for your MPA, make it feel SPAish.
+
+[![Minified bundle size](https://img.shields.io/bundlephobia/minzip/@wolframkriesing/spaish.svg)](https://bundlephobia.com/package/@wolframkriesing/spaish)
+[![really open source](https://img.shields.io/badge/really-open_source-red)](https://codeberg.org/wolframkriesing/spaish)
+[![License](https://img.shields.io/npm/l/@wolframkriesing/spaish.svg)](https://codeberg.org/wolframkriesing/spaish/src/branch/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@wolframkriesing/spaish.svg)](https://www.npmjs.com/package/@wolframkriesing/spaish)
+
 **SPAish** makes Multi-Page Applications (MPAs) feel a bit more like Single-Page Applications (SPAs) — without changing your architecture.
 
 It's a small, framework-agnostic JavaScript library that allows you to:
