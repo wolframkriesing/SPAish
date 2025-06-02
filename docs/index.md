@@ -1,8 +1,8 @@
 # What is SPAish?
 
-SPAish provides multiple small functions/classes that you can add into your webpage
-where they fit, they help to keep the page nice and the UX modern by taking advantage
-of the browser's super optimized rendering engine. SPAish help to make MPAs more awesome.
+SPAish is a [progressive enhancement](https://www.quirksmode.org/blog/archives/2021/02/progressive_enh_1.html) toolkit,
+made of a few small functionalities to make a site more interactive and modern without the need to
+use a full SPA framework. It is not a framework, it is a set of tools to enhance your MPA.
 
 ## Why does SPAish exist?
 
