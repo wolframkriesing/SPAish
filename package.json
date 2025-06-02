@@ -9,6 +9,7 @@
   "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
   "scripts": {
     "test": "",
+    "prebuild": "echo \"spaish.version = '$(node -p \"require('./package.json').version\")';\" > src/version.js",
     "build": "cat src/*.js > dist/spaish.js",
     "deploy": "npm run build && git clone --branch=pages `git remote get-url origin` _deploy 2>/dev/null; cd _deploy && git pull && cp -r ../_dist/* . && git add --all . && git commit -m \"Deployed - `date`\";"
   },
