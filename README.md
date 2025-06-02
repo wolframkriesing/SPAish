@@ -32,7 +32,15 @@ DOM nodes referred to have been rendered.
 <script src="https://cdn.jsdelivr.net/npm/@wolframkriesing/spaish/dist/spaish.min.js"></script>
 <script>
   // Restore scroll position, useful e.g. when filtering/sorting data, big forms, comments, threads, ...
-  spaish.scrollRestore(location.pathname, ['#scrollable-node']);
+  spaish.scroll.restore(location.pathname, ['#scrollable-node']);
+  
   // Reopen the <details> on page changes or when coming back to the page.
-  spaish.detailsReopen(location.pathname, ['details.faq']);
+  spaish.details.reopen(location.pathname, ['details.faq']);
+  
+  // Restore the color scheme, e.g. light or dark mode.
+  spaish.colorScheme.restoreLast();
 </script>
+
+<p>Toggle the color scheme.</p>
+<button onclick="spaish.colorScheme.toggle();">Toggle Color Scheme</button>
+```
