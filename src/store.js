@@ -1,5 +1,5 @@
 const spaish = {
-  _store: {
+  sessionStore: {
     _safeJsonParse: (value) => {
       try {
         return JSON.parse(value);
@@ -13,7 +13,7 @@ const spaish = {
     },
     readArray: (sessionKey) => {
       const values = sessionStorage.getItem(sessionKey);
-      const fromStorage = spaish._store._safeJsonParse(values);
+      const fromStorage = spaish.sessionStore._safeJsonParse(values);
       return fromStorage === null ? [] : fromStorage;
     },
     /**
@@ -22,7 +22,7 @@ const spaish = {
      */
     readMap: (sessionKey) => {
       const values = sessionStorage.getItem(sessionKey);
-      const fromStorage = spaish._store._safeJsonParse(values);
+      const fromStorage = spaish.sessionStore._safeJsonParse(values);
       return fromStorage === null ? new Map() : new Map(fromStorage);
     },
 
@@ -35,7 +35,7 @@ const spaish = {
       const items = JSON.stringify([...map]);
       sessionStorage.setItem(sessionKey, items);
     },
-    
+
     readString: (sessionKey) => {
       const value = sessionStorage.getItem(sessionKey);
       return value === null ? '' : value;

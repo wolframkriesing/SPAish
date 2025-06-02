@@ -9,7 +9,7 @@ The first script you should add to your page is to restore the last used color s
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@wolframkriesing/spaish/dist/spaish.min.js"></script>
 <script>
-  spaish.restoreLastColorScheme();
+  spaish.colorScheme.restoreLast();
 </script>
 ```
 
@@ -18,7 +18,7 @@ The color scheme is stored in the `sessionStorage` and restored on page load.
 The toggle button, that you can put on your page, must call the function below to toggle the color scheme:
 
 ```html
-<button onclick="spaish.toggleColorScheme()">toggle</button>
+<button onclick="spaish.colorScheme.toggle()">toggle</button>
 ```
 
 This will toggle the `data-theme` attribute on the `<html>` element between `light` and `dark`,
