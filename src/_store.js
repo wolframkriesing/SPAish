@@ -35,5 +35,13 @@ const spaish = {
       const items = JSON.stringify([...map]);
       sessionStorage.setItem(sessionKey, items);
     },
+    
+    readString: (sessionKey) => {
+      const value = sessionStorage.getItem(sessionKey);
+      return value === null ? '' : value;
+    },
+    writeString: (sessionKey, value) => {
+      sessionStorage.setItem(sessionKey, value);
+    },
   },
 };
