@@ -4,7 +4,7 @@
     "access": "public"
   },
   "description": "SPAish - progressive enhancer for your MPA, make it feel SPAish",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/spaish.js",
   "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
   "scripts": {
