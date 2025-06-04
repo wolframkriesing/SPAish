@@ -9,6 +9,12 @@ Find here all changes tracked while developing SPAish.
 - [ ] sidebar/menu toggle restore
 - [ ] auto-open details when current page linked inside, not sure if this makes always sense
 - [...] create `id` on H1-H6 elements, so they can be linked to and create # links to them
+- [ ] A copy-button to copy a headline's URL
+- [ ] make `spaish.section.addAnchors()` also copy the URL to the clipboard? maybe show a separate icon when hovering the anchor icon?
+
+## v1.0.5
+
+- [x] add `spaish.section.addAnchors()` which adds `id` attribute if needed and a visual anchor icon to the headings of a section
 
 ## v1.0.4
 
