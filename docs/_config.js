@@ -26,6 +26,7 @@ const addPropertyNav = (files, {toSlug}) => {
       'api/colorScheme',
       'api/details',
       'api/scroll',
+      'api/section',
     ]],
     ['About', [
       'changelog',
