@@ -1,6 +1,7 @@
 spaish.section = {
   ID_PREFIX: 'section',
   HAS_SECTION_ANCHOR_FLAG_NAME: 'hasSpaishSectionAnchor',
+  ANCHOR_TEXT: '#',
   
   addId($section, prefix = this.ID_PREFIX) {
     if (!$section.id) {
@@ -12,6 +13,7 @@ spaish.section = {
     $sections.forEach(($section) => this.addId($section, prefix));
   },
   addAnchor($section) {
+    this.addId($section);
     if ($section.dataset[this.HAS_SECTION_ANCHOR_FLAG_NAME]) {
       return;
     }
@@ -23,7 +25,7 @@ spaish.section = {
     }
     const link = document.createElement('a');
     link.href = `#${$section.id}`;
-    link.innerHTML = '#';
+    link.innerHTML = this.ANCHOR_TEXT;
     link.style.position = 'absolute';
     link.style.left = '0';
     link.style.top = '0';
@@ -40,7 +42,6 @@ spaish.section = {
   },
   addAnchors() {
     this.addIds();
-
     const addAnchorOnHover = ($el) => {
       $el.addEventListener('pointerover', (e) => this.addAnchor(e.currentTarget));
     };
