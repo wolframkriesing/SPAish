@@ -1,2 +1,3 @@
-dist
+_dist
+_docs
 src/version.js

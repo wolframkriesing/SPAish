@@ -5,19 +5,20 @@
   },
   "description": "SPAish - progressive enhancer for your MPA, make it feel SPAish",
   "version": "1.0.5-dev",
-  "main": "dist/spaish.js",
+  "main": "_dist/spaish.js",
   "files": [
-    "dist",
+    "_dist",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
   ],
   "scripts": {
     "test": "",
-    "start": "http-server dist -p 5003 dist",
+    "start": "http-server _dist -p 5003",
     "prebuild": "echo \"spaish.version = '$(node -p \"require('./package.json').version\")';\" > src/version.js",
-    "build": "cat src/*.js > dist/spaish.js",
-    "deploy": "npm run build && git clone --branch=pages `git remote get-url origin` _deploy 2>/dev/null; cd _deploy && git pull && cp -r ../_dist/* . && git add --all . && git commit -m \"Deployed - `date`\";"
+    "build": "cat src/*.js > _dist/spaish.js",
+    "build:docs": "picossg -c docs -o _docs",
+    "start:docs": "http-server _docs -p 5004"
   },
   "keywords": [
     "spa",
@@ -34,6 +35,7 @@
     "url": "https://codeberg.org/wolframkriesing/spaish.git"
   },
   "devDependencies": {
+    "@wolframkriesing/picossg": "^5.0.0",
     "http-server": "^14.1.1"
   }
 }
