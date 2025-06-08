@@ -1,6 +1,13 @@
 import {docsKit} from '../../picossg/src/kits/index.js';
 import packageJson from '../package.json' with {type: 'json'};
 
+/**
+ * @typedef {import('../../picossg/src/kits/docs/index.js').DocsKitPages} DocsKitPages
+ * @typedef {import('../../picossg/src/kits/docs/index.js').DocsKitNav} DocsKitNav
+ * @typedef {import('../../picossg/src/kits/docs/index.js').DocsKitSite} DocsKitSite
+ * @typedef {import('../../picossg/src/config.js').Config} Config
+ */
+
 const preprocess = async (files, config) => {
   /** @type {DocsKitPages} */
   const pages = new Map([
@@ -15,6 +22,7 @@ const preprocess = async (files, config) => {
     ['api/section.md', 'api/section.html'],
     ['api/details.md', 'api/details.html'],
     ['api/scroll.md', 'api/scroll.html'],
+    ['api/store.md', 'api/store.html'],
   ])
 
   /** @type {DocsKitNav} */
@@ -30,6 +38,7 @@ const preprocess = async (files, config) => {
       'api/details.md',
       'api/scroll.md',
       'api/section.md',
+      'api/store.md',
     ]],
     ['About', [
       // 'changelog',
