@@ -1,75 +1,71 @@
-import path from "path";
-import {addStatsProperty} from "@wolframkriesing/picossg/src/plugins/stats.js";
+import {docsKit} from '../../picossg/src/kits/index.js';
 import packageJson from '../package.json' with {type: 'json'};
 
-// Site wide properties
-const site = {
-  title: 'SPAish',
-  abstract: 'SPAish - progressive enhancer for your MPA, make it feel SPAish.',
-  summaryImage: '/og-image.webp',
-  version: packageJson.version,
-};
-
-const toSlug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
-const DOCS_DIR = '';
-
-const addPropertyNav = (files, {toSlug}) => {
+const preprocess = async (files, config) => {
+  /** @type {DocsKitPages} */
   const pages = new Map([
+    ['index.md', 'index.html'],
+    ['colorScheme.md', 'colorScheme/index.html'],
+    ['section.md', 'section/index.html'],
+    ['details.md', 'details/index.html'],
+    ['scroll.md', 'scroll/index.html'],
+    ['section.md', 'section/index.html'],
+    
+    ['api/colorScheme.md', 'api/colorScheme.html'],
+    ['api/section.md', 'api/section.html'],
+    ['api/details.md', 'api/details.html'],
+    ['api/scroll.md', 'api/scroll.html'],
+  ])
+
+  /** @type {DocsKitNav} */
+  const nav = new Map([
     ['Overview', [
-      '.',
-      'colorScheme',
-      'details',
-      'scroll',
+      'index.md',
+      'colorScheme.md',
+      'details.md',
+      'scroll.md',
     ]],
     ['API', [
-      'api/colorScheme',
-      'api/details',
-      'api/scroll',
-      'api/section',
+      'api/colorScheme.md',
+      'api/details.md',
+      'api/scroll.md',
+      'api/section.md',
     ]],
     ['About', [
-      'changelog',
+      // 'changelog',
     ]],
   ]);
 
-  const nav = new Map();
-  pages.keys().toArray().forEach(title => nav.set(title, {id: toSlug(title), items: []}));
-
-  for (const [title, pagePaths] of pages) {
-    for (const pagePath of pagePaths) {
-      for (const [filename, data] of files) {
-        if (filename.startsWith(path.join(DOCS_DIR, pagePath, 'index.html'))) {
-          nav.get(title).items.push(data);
-        }
-      }
-    }
-  }
-  for (const [_, data] of files) {
-    data.nav = nav;
-  }
-};
-
-const preprocess = (files) => {
-  addStatsProperty(files);
-
-  for (const [filename, data] of files) {
-    data._frontmatter.layout = '_base.njk';
-    data.title = data._file.content.match(/#\s*(.*)/)?.[1];
-
-    data._site = site
-  }
+  /** @type {DocsKitSite} */
+  const site = {
+    title: 'SPAish',
+    abstract: 'SPAish....',
+    summaryImage: '/og-image.webp',
+    version: packageJson.version,
+    links: [
+      {url: 'https://codeberg.org/wolframkriesing/picossg', title: 'Source code'},
+      {url: 'https://mastodontech.de/@wolframkriesing', title: 'Contact'},
+    ]
+  };
   
-  addPropertyNav(files, {toSlug});
+  await docsKit.preprocess(files, config, {pages, nav, site})
+  
+  const data = files.get('index.md')
+  data._frontmatter.layout = '_base.njk';
 }
 
 const configure = ({njk}) => {
-  njk.addFilter('slug', toSlug);
-  njk.addFilter('readableDateTime', (date) => new Date(date).toLocaleString('en-EN', {
-    dateStyle: 'long',
-    timeStyle: 'medium',
-    hourCycle: 'h23'
-  }));
+  docsKit.configure({njk});
 }
 
-export {preprocess, configure}
+/**
+ * @param config {Config}
+ */
+const preCreateProcessors = (config) => {
+  config.templatePaths = [
+    config.contentDir,
+    docsKit.KITS_TEMPLATE_PATH,
+  ];
+}
+
+export {preprocess, configure, preCreateProcessors}

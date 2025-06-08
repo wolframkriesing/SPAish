@@ -1,5 +1,6 @@
 {
   "name": "@wolframkriesing/spaish",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },

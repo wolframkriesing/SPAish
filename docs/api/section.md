@@ -2,20 +2,6 @@
 
 API for adding GitHub-style anchor links to section headings with automatic ID generation.
 
-## Constants
-
-### `ID_PREFIX`
-Default: `'section'`  
-The prefix used when generating IDs for headings.
-
-### `HAS_SECTION_ANCHOR_FLAG_NAME`
-Default: `'hasSpaishSectionAnchor'`  
-Data attribute name used to track which elements have anchors to prevent duplicates.
-
-### `ANCHOR_TEXT`
-Default: `'#'`  
-The text content displayed in anchor links.
-
 ## `addId($section [, prefix = 'section'])`
 
 Adds an auto-generated ID to a heading element if it doesn't already have one.
@@ -128,3 +114,16 @@ spaish.section.addAnchors();
 - Each anchor is created fresh on hover and removed after
 - Uses event delegation for efficient memory usage
 - Anchor links are functional for page navigation
+
+## `ID_PREFIX`
+Default: `'section'`  
+The prefix used when generating IDs for headings.
+
+## `HAS_SECTION_ANCHOR_FLAG_NAME`
+Default: `'hasSpaishSectionAnchor'`  
+Data attribute name used to track which elements have anchors to prevent duplicates.
+
+## `ANCHOR_TEXT`
+Default: `'#'`  
+The text content displayed in anchor links.
+

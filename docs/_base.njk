@@ -1,109 +1,21 @@
-<!doctype html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="mobile-web-app-capable" content="yes"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="author" content="Wolfram Kriesing">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PicoSSG - The minimalist static site generator with predictable 1:1 file mapping">
+{% extends 'kits/docs/_base.njk' %}
 
-  <title>{{ title }} | picoSSG docs</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23000000'/><text x='32' y='45' font-size='40' text-anchor='middle' fill='%2300ff00' font-family='monospace'>P</text></svg>">  
+{% block head %}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23000000'/><text x='32' y='45' font-size='30' text-anchor='middle' fill='%2300ff00' font-family='monospace' style='text-decoration: line-through'>SPA</text></svg>">  
   <script defer data-domain="picossg.dev" src="https://plausible.io/js/script.outbound-links.js"></script>
   <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-  
-  <link rel="stylesheet" href="https://picossg.dev/style.css">
-  <link rel="stylesheet" href="https://picossg.dev/docs/style.css">
-  
-  <meta property="og:title" content="{{_site.title}}" />
-  
-  <meta property="article:tag" content="ssg" />
-  <meta property="article:tag" content="JavaScript" />
-  <meta property="article:tag" content="static side generator" />
-  
-  <meta property="og:description" content="{{_site.abstract}}" />
-  <meta property="article:description" content="{{_site.abstract}}" />
-  <meta name="twitter:description" content="{{_site.abstract}}" />
+{% endblock %}
 
-  <meta property="og:image" content="https://picossg.dev{{_site.summaryImage}}" />
-  <meta property="og:image:url"  content="https://picossg.dev{{_site.summaryImage}}" />
-  <meta name="twitter:image" content="https://picossg.dev{{_site.summaryImage}}" />
-{#  <script src="https://cdn.jsdelivr.net/npm/@wolframkriesing/spaish@1.0.5/dist/spaish.min.js"></script>#}
-  <script src="/spaish.js"></script>
-  
-{#  {% block head %}{% endblock %}#}
-</head>
-<body>
-
-{% set detailsSelectors = [] %}
-
-<button class="theme-toggle" onclick="spaish.colorScheme.toggle()">💡</button>
-<header>
+{% block header_text %}
+  <style>
+    .ascii-art {
+      font-size: 12px;
+      line-height: 12px;
+      white-space: pre;
+      margin-top: -1em;
+    }
+  </style>
   <a href="/" class="ascii-art">
     {% include '_spaish_asciiart.txt' %}
   </a>
-</header>
-
-<div class="content-wrapper">
-  <aside>
-    <nav>
-      {% for category, data in nav.entries() %}
-        {% set files = data.items %}
-        {% set detailsId = 'toc-'+data.id %}
-        {% set detailsSelectors = (detailsSelectors.push('#'+detailsId), detailsSelectors) %}
-        
-        <details id="{{ detailsId }}">
-          <summary>{{ category }}</summary>
-          <ul>
-            {% for file in files %}
-              <li>
-                {% if url === file.url %}
-                  <a href="{{ file.url }}" class="active">{{ file.title }}</a>
-                {% else %}
-                  <a href="{{ file.url }}">{{ file.title }}</a>
-                {% endif %}
-                
-                {% if url === file.url %}
-                  <ul class="secondLevelHeadlines"></ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </details>
-      {% endfor %}
-    </nav>
-    
-    <small class="meta">
-      <hr/>
-      SPAish v{{ _site.version }}
-      <br/>
-      <a href="https://codeberg.org/wolframkriesing/spaish">Source code</a>
-      <br/>
-      <a href="https://mastodontech.de/@wolframkriesing">Contact</a>
-      
-      <br/>
-      <br/>
-      Last update<br/>
-      <time datetime="{{ date }}">{{ _stats.lastModified.dateISO | readableDateTime }}</time>
-      <div style="font-size: x-small">
-        in <a href="{{ _stats.lastModified.prettyUrlPath }}">{{ _stats.lastModified.filename }}</a>
-      </div>
-    </small>
-  </aside>
-
-  <main>
-    {{ content | safe }}
-  </main>
-</div>
-
-<script>
-  spaish.colorScheme.restoreLast();
-  spaish.section.addAnchors();
-
-  const detailsSelectors = {{ detailsSelectors | dump | safe }};
-  document.addEventListener('DOMContentLoaded', () => spaish.details.reopen('picossg-docs', detailsSelectors));
-</script>
-
-</body>
-</html>
+{% endblock %}
