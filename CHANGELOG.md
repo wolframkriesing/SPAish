@@ -17,7 +17,7 @@ Find here all changes tracked while developing SPAish.
 
 - [x] add `spaish.section.addAnchors()` which adds `id` attribute if needed and a visual anchor icon to the headings of a section
 - [x] added documentation for all functionality, see the [docs](https://picossg.dev/tools/spaish/)
-- [ ] put the docs online at https://picossg.dev/tools/spaish/
+- [x] put the docs online at https://picossg.dev/tools/spaish/
 
 ## v1.0.4
 
