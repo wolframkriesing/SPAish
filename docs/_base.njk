@@ -4,10 +4,13 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23000000'/><text x='32' y='45' font-size='30' text-anchor='middle' fill='%2300ff00' font-family='monospace' style='text-decoration: line-through'>SPA</text></svg>">  
   <script defer data-domain="picossg.dev" src="https://plausible.io/js/script.outbound-links.js"></script>
   <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <link rel="stylesheet" href="{{ _site.baseUrl }}/spaish-theme.css">
 {% endblock %}
 
-{% block home_link %}
+{% block header_content %}
   <style>
+    header {
+    }
     .ascii-art {
       font-size: 12px;
       line-height: 12px;
@@ -18,4 +21,6 @@
   <a href="{{ _site.baseUrl }}/" class="ascii-art">
     {% include '_spaish_asciiart.txt' %}
   </a>
+  
+  <a href="/">PicoSSG</a>
 {% endblock %}

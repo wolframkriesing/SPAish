@@ -1,0 +1,29 @@
+:root {
+  /* Dark Theme – Soft Ember */
+  --dark-primary-color: #ffa94d;         /* Soft amber */
+  --dark-primary-hover: #ffd8a8;         /* Light glowing hover */
+  --dark-text-color: #ffbb66;
+  --dark-bg-primary: #1a1310;            /* Dark brownish charcoal */
+  --dark-bg-secondary: #0f0a08;
+  --dark-bg-tertiary: #2a1f1a;
+  --dark-border-color: #3b2a20;          /* Subtle ember tint */
+  --dark-code-bg: #1c120d;
+  --dark-code-text: #ffd39b;
+  --dark-blockquote-text: #e6a96f;
+  --dark-crt-overlay: rgba(40, 20, 10, 0.2);
+  --dark-body-after-opacity: 0.12;
+
+  /* Light Theme – Fire (unchanged from last version) */
+  --light-primary-color: #e25822;
+  --light-primary-hover: #bf360c;
+  --light-text-color: #2a1a00;
+  --light-bg-primary: #fffaf5;
+  --light-bg-secondary: #fef2e8;
+  --light-bg-tertiary: #fde5d0;
+  --light-border-color: #e6c4a0;
+  --light-code-bg: #fff4e5;
+  --light-code-text: #cc5200;
+  --light-blockquote-text: #b34700;
+  --light-crt-overlay: rgba(255, 200, 150, 0.08);
+  --light-body-after-opacity: 0.05;
+}
