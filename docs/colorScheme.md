@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # Color Scheme
 
 SPAish allows you to toggle and remember the color scheme of your site, light or dark mode.

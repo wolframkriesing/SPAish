@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # `spaish.details`
 
 API for preserving the open/closed state of `<details>` elements across page loads.

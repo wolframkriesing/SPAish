@@ -6,7 +6,7 @@
   <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 {% endblock %}
 
-{% block header_text %}
+{% block home_link %}
   <style>
     .ascii-art {
       font-size: 12px;
@@ -15,7 +15,7 @@
       margin-top: -1em;
     }
   </style>
-  <a href="/" class="ascii-art">
+  <a href="{{ _site.baseUrl }}/" class="ascii-art">
     {% include '_spaish_asciiart.txt' %}
   </a>
 {% endblock %}

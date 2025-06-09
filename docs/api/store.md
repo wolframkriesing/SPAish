@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # `spaish.sessionStore`
 
 Low-level API for sessionStorage operations with JSON serialization and safe error handling.

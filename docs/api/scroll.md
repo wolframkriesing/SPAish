@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # `spaish.scroll`
 
 API for storing and restoring scroll positions across page loads for both window and specific scrollable elements.

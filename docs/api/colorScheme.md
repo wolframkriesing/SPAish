@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # `spaish.colorScheme`
 
 API for managing light/dark color scheme toggling and persistence.

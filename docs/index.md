@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # What is SPAish?
 
 SPAish is a [progressive enhancement](https://www.quirksmode.org/blog/archives/2021/02/progressive_enh_1.html) toolkit,

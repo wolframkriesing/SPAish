@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # Scroll
 
 SPAish allows you to store and restore scroll positions across page loads, maintaining the user's scroll position in both the window and specific scrollable elements.

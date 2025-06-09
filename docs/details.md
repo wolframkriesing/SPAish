@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # Details
 
 SPAish allows you to remember which `<details>` elements were open and restore their state across page loads.

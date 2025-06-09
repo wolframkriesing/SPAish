@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # `spaish.section`
 
 API for adding GitHub-style anchor links to section headings with automatic ID generation.

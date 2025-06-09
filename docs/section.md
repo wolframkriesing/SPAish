@@ -1,3 +1,7 @@
+---
+layout: _base.njk
+---
+
 # Section
 
 SPAish provides GitHub-style anchor links for section headings, adding clickable # links that appear on hover.

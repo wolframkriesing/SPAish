@@ -23,7 +23,7 @@ const preprocess = async (files, config) => {
     ['api/details.md', 'api/details.html'],
     ['api/scroll.md', 'api/scroll.html'],
     ['api/store.md', 'api/store.html'],
-  ])
+  ]);
 
   /** @type {DocsKitNav} */
   const nav = new Map([
@@ -48,19 +48,18 @@ const preprocess = async (files, config) => {
   /** @type {DocsKitSite} */
   const site = {
     title: 'SPAish',
-    abstract: 'SPAish....',
+    description: 'SPAish....',
     summaryImage: '/og-image.webp',
     version: packageJson.version,
+    baseUrl: '/tools/spaish',
+    url: 'https://picossg.dev',
     links: [
       {url: 'https://codeberg.org/wolframkriesing/picossg', title: 'Source code'},
       {url: 'https://mastodontech.de/@wolframkriesing', title: 'Contact'},
     ]
   };
   
-  await docsKit.preprocess(files, config, {pages, nav, site})
-  
-  const data = files.get('index.md')
-  data._frontmatter.layout = '_base.njk';
+  await docsKit.preprocess(files, config, {pages, nav, site});
 }
 
 const configure = ({njk}) => {
