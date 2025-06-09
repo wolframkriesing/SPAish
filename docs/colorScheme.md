@@ -29,9 +29,9 @@ This will toggle the `data-theme` attribute on the `<html>` element between `lig
 and store the last used color scheme in `sessionStorage`.
 
 ```html
-<html lang="en" prefix="og: https://ogp.me/ns#" data-theme="light">
+<html data-theme="light">
 OR
-<html lang="en" prefix="og: https://ogp.me/ns#" data-theme="dark">
+<html data-theme="dark">
 ```
 
 ## CSS Styling

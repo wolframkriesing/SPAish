@@ -9,6 +9,7 @@ Find here all changes tracked while developing SPAish.
 - [ ] auto-open details when current page linked inside, not sure if this makes always sense
 - [ ] A copy-button to copy a headline's URL
 - [ ] make `spaish.section.addAnchors()` also copy the URL to the clipboard? maybe show a separate icon when hovering the anchor icon?
+- [ ] section: multiple headlines with the same text create the same `id`, so the anchor icon does not work, maybe add a number to the `id`?
 
 ## v1.0.5
 
